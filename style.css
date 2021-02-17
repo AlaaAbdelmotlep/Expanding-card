@@ -1,0 +1,80 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+}
+
+.container {
+	display: flex; /* That make divs under container set horizenaly */
+	width: 90vw;
+} 
+
+.panel {
+	background-size: cover; /* Change to cover to preseve rounded corner on large screen, (auto 100%) old , change to cover*/
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 80vh;
+	border-radius: 50px;
+	color: #fff;
+	cursor: pointer;
+	flex: 0.5; /* That will change in active panel */
+	margin: 10px;
+	position: relative; /* To make h3 position is absolute */
+	transition: flex 0.7s ease-in;
+}
+
+.panel h3{
+	font-size: 24px;
+	position: absolute;
+	bottom: 20px; 
+	left: 20px;
+	margin: 0;
+	opacity: 0; /* It will appare when panel is active */
+}
+
+.panel.active {
+	flex: 5;
+}
+
+.panel.active h3{
+	opacity: 1;
+	transition: opacity 0.3 ease-in 0.4;
+	color: black;
+}
+
+/* That mean this style will be active under 480px */
+@media(max-width: 480px){
+	.container {
+		width: 100vw;
+	}
+
+
+	.panel:nth-of-type(4),
+	.panel:nth-of-type(5) {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
